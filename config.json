@@ -1,0 +1,26 @@
+{
+    "keepSecureLoot": true,
+    "initialMoneyCost": 1.5,
+    "buyMults": {
+        "!": "The key is the english name for a (sub)category.",
+        "!!": "If it isn't found, `default` will be used instead.",
+        "!!!": "Same applies for sellMults.",
+        "___": "___",
+        "default": 1.5,
+        "Weapons": 5,
+        "Weapon parts & mods": 1.5,
+        "Magazines": 1,
+        "Tactical rigs": 0.75,
+        "Backpacks": 0.5,
+        "Secured containers": 1,
+        "Ammo": 0.5,
+        "Medical treatment": 0.4
+    },
+    "sellMults": {
+        "Weapons": 0.5,
+        "Weapon parts & mods": 0.5,
+        "Magazines": 1,
+        "Ammo": 1,
+        "default": 0.25
+    }
+}
