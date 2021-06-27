@@ -10,14 +10,6 @@ let realSaveProgress = inraid.saveProgress;
 let fs = require("fs");
 
 function saveProgress(offraidData, sessionID) {
-    /*if (!gameplayConfig.inraid.saveLootEnabled) {
-        return;
-    }*/
-
-    // fs.writeFile("D:/json_test.txt", JSON.stringify(offraidData), (err) => {console.log("error while writing progress " + err)});
-    // console.log(JSON.stringify(offraidData));
-
-    console.log("randomizer'd saveProgress");
 
     let pmcData = com.getPmcProfile(sessionID);
 

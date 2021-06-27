@@ -97,7 +97,6 @@ function checkMissing(curCfg, defaultCfg, storedCfg) {
 let modded = checkMissing(randomizerConfig, configKeys, mod_cfg);
 
 if (modded && !messedUpJSON) {
-	console.log(configPath);
 	fs.writeFileSync(configPath, JSON.stringify(randomizerConfig, null, 4), () => {});
 }
 

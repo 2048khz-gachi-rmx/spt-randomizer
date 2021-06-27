@@ -56,7 +56,6 @@ function detourTrader() {
 		let pmcData = com.getPmcProfile(sessionID);
 		if (!pmcData.IsRandomizer) { return out; }
 
-		console.log(traderID);
 		let bs = out.barter_scheme;
 
 		if (traderID === "579dc571d53a0658a154fbec") {
@@ -65,8 +64,6 @@ function detourTrader() {
 			// use the flea market, fuck you
 			return {};
 		}
-
-		//console.log(out);
 
 		// id is barter ID, not item ID
 		let barter2item = {}
