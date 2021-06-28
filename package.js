@@ -24,10 +24,4 @@ Randomizer.serverFunctions = {
 	"httpBody": 			HttpResponse.getBody,
 }
 
-/*Randomizer.overrideRoute = function(route, newFunc) {
-	// gonna puke :x
-	Randomizer.overrideServers.routes[route]["aki"] = newFunc;
-}*/
-
-//require("./src/randomizer_load.js");
 require("./src/main/init.js");

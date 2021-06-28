@@ -251,7 +251,7 @@ class Controller {
 
 		if (!preset) {
 			// first time no preset; try initializing them in the event they werent
-			preset.initialize();
+			sv.presets.initialize();
 			preset = sv.presets.getStandardPreset(wepID);
 		}
 
