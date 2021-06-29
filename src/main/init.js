@@ -16,8 +16,6 @@ function loadRandomizer() {
 
 	let preCreateProfile = sv.profileCreator.createProfile;
 
-	//router.staticRoutes["/client/game/profile/create"] // don't break other mods
-
 	function createProfile(info, sessionID) {
 
 		let ret = preCreateProfile(info, sessionID)

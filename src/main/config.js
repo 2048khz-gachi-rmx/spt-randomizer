@@ -97,7 +97,11 @@ function checkMissing(curCfg, defaultCfg, storedCfg) {
 let modded = checkMissing(randomizerConfig, configKeys, mod_cfg);
 
 if (modded && !messedUpJSON) {
-	fs.writeFileSync(configPath, JSON.stringify(randomizerConfig, null, 4), () => {});
+	try {
+		fs.writeFileSync(configPath, JSON.stringify(randomizerConfig, null, 4), () => {});
+	} catch {
+		console.log("Failed to write config file?? @ " + configPath);
+	}
 }
 
 global.Randomizer.config = randomizerConfig;

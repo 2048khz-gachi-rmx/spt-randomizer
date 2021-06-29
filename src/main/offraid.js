@@ -51,9 +51,7 @@ function saveProgress(offraidData, sessionID) {
 
 }
 
-// Randomizer.overrideRoute("/raid/profile/save", saveProgress);
-
-inraid.saveProgress = saveProgress; // just in case lol
+inraid.saveProgress = saveProgress;
 
 
 let realAddPlayer = inraid.addPlayer;
