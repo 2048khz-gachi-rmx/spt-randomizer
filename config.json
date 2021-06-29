@@ -10,17 +10,17 @@
         "Weapons": 5,
         "Weapon parts & mods": 1.5,
         "Magazines": 1,
+        "Ammo": 0.5,
         "Tactical rigs": 0.75,
         "Backpacks": 0.5,
         "Secured containers": 1,
-        "Ammo": 0.5,
         "Medical treatment": 0.4
     },
     "sellMults": {
         "Weapons": 0.5,
+        "Melee weapons": 0.2,
         "Weapon parts & mods": 0.5,
-        "Magazines": 1,
-        "Ammo": 1,
+        "Ammo": 0.5,
         "default": 0.25
     }
 }

@@ -53,9 +53,9 @@ let configKeys = {
 
 	"sellMults": {
 		"Weapons": 0.5,
+		"Melee weapons": 0.2, // fuck the axes
 		"Weapon parts & mods": 0.5,
-		"Magazines": 1,
-		"Ammo": 1,
+		"Ammo": 0.5,
 		"default": 0.25,
 	}
 }
@@ -68,6 +68,10 @@ let configKeys = {
 
 function checkMissing(curCfg, defaultCfg, storedCfg) {
 	let modded = false;
+
+	for (let scfg in storedCfg) {
+		curCfg[scfg] = storedCfg[scfg];
+	}
 
 	for (let cfgName in defaultCfg) {
 		let defaultValue = defaultCfg[cfgName];

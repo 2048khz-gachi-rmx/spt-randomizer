@@ -10,7 +10,7 @@ function tplLookup() {
     if (tplLookup.lookup === undefined) {
         const lookup = {
             items: {},
-            categories: {byId: {}, byParent: {}}
+            categories: {byId: {}, byParent: {}, byName: {}}
         }
 
         for (let x of templates.handbook.Items) {
@@ -23,6 +23,11 @@ function tplLookup() {
                 lookup.categories.byParent[x.ParentId] || (lookup.categories.byParent[x.ParentId] = []);
                 lookup.categories.byParent[x.ParentId].push(x.Id);
             }
+
+            let catname = locale.catToName(x.Id)
+            if (!catname) {continue;}
+
+            lookup.categories.byName[catname] = x.Id;
         }
 
         tplLookup.lookup = lookup;
@@ -32,6 +37,8 @@ function tplLookup() {
 }
 
 function getCategory(id) {
+	if (!id) { return; }
+
 	let lkup = tplLookup()
 
 	let catID = lkup.items[id]
@@ -55,6 +62,8 @@ function getCategory(id) {
 
 
 function getSubCategory(id) {
+	if (!id) { return; }
+
 	let lkup = tplLookup()
 	let parCatID = lkup.items[id]
 	if (!parCatID) {
@@ -79,6 +88,8 @@ function getSubCategory(id) {
 
 
 function getItemsCategory(findCatID) {
+	if (!findCatID) { return; }
+
 	let lkup = tplLookup();
 	let catMatch = {}; // if an item is within any of these categories, it'll be added to the output
 
@@ -129,6 +140,8 @@ function getItemsCategory(findCatID) {
 */
 
 function getItemsCategoryDict(findCatID) {
+	if (!findCatID) { return; }
+
 	let lkup = tplLookup();
 	let catMatch = {};
 
@@ -165,13 +178,31 @@ function getItemsCategoryDict(findCatID) {
 	return out;
 }
 
-// lifted from ragfair.js
+function getCatLevel(catID) {
+	if (!catID) { return -1; }
+	let lkup = tplLookup();
+	let ret = 0;
+
+	while (catID) {
+		if (!lkup.categories.byId[catID]) {break;}
+		catID = lkup.categories.byId[catID]
+		ret++;
+	}
+
+	return ret;
+}
+
+function nameToID(name) {
+	let lkup = tplLookup();
+	return lkup.categories.byName[name]
+}
 
 module.exports.tplLookup = tplLookup;
 module.exports.getCategory = getCategory;
 module.exports.getSubCategory = getSubCategory;
 module.exports.getItemsCategory = getItemsCategory;
 module.exports.getItemsCategoryDict = getItemsCategoryDict;
-
+module.exports.nameToID = nameToID;
+module.exports.getCatLevel = getCatLevel;
 
 global.rand_ragcat = module.exports
