@@ -89,16 +89,3 @@ inraid.removePlayer = function(ssid) {
     let pmcData = com.getPmcProfile(ssid);
     if (pmcData.IsRandomizer) { delete pmcData.tookInRaid; }
 }
-
-
-let ssid = `7922757a92d0df4ab7dd8310`;
-let offraidData = fs.readFileSync("D:/json_test2.txt")
-
-function a() {
-    // let pmcData = profile_f.controller.getPmcProfile(ssid);
-    // Randomizer.Class.giveRandomGun(ssid);
-    // saveProgress(JSON.parse(offraidData), ssid);
-}
-
-
-setTimeout(a, 2000)
